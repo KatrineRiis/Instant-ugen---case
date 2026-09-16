@@ -10,9 +10,8 @@ p {
 .index_hero {
   position: relative;
   width: 100%;
-  /* Allows the yellow box to overflow past the bottom of the image without getting clipped */
   overflow: visible;
-  margin-bottom: 5rem; /* Adds space below so content under the hero doesn't overlap the yellow box */
+  margin-bottom: 5rem;
 }
 
 .index_hero img {
@@ -20,17 +19,16 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-  /* Faster cycle time with discrete frame steps for authentic film jitter */
   animation: subtleFilmJitter 3s infinite steps(1);
 }
 
+/* HERO IMG ANIMATION*/
 @keyframes subtleFilmJitter {
   0% {
     filter: brightness(1) contrast(1);
     transform: translate(0, 0);
   }
   20% {
-    /* Slight shift up, very minor brightness boost */
     filter: brightness(1.03);
     transform: translate(0.5px, -0.5px);
   }
@@ -39,7 +37,6 @@ p {
     transform: translate(-0.5px, 0.5px);
   }
   60% {
-    /* Soft analog warm tint bump without severe color distortion */
     filter: brightness(1.02) sepia(0.08);
     transform: translate(-0.5px, -0.5px);
   }
@@ -272,10 +269,9 @@ li {
   color: white;
 }
 
-/****/
 /*** DESKTOP ***/
 @media screen and (min-width: 1200px) {
-  /* ==================== LAYOUT & CONTAINERS ==================== */
+  /** LAYOUTS & GRIDS**/
   .grid_1_1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -315,10 +311,9 @@ li {
     text-align: center;
   }
 
-  /* Forces all images to take the available space and align to the bottom */
   .infographic_item img {
-    height: 120px; /* Set a fixed height for all SVG icons */
-    width: auto; /* Maintains aspect ratio */
+    height: 120px;
+    width: auto;
     object-fit: contain;
     margin-bottom: 12px;
   }
@@ -341,8 +336,7 @@ li {
     overflow: hidden;
   }
 
-  /* ==================== SHARED POLAROID BUTTON STYLES ==================== */
-
+  /* HERO */
   .hero_overlay {
     width: 80%;
     max-width: 800px;
@@ -377,8 +371,7 @@ li {
     box-shadow: inset 0 0 0 3px #ff371a;
   }
 
-  /* ==================== CONTENT SECTIONS ==================== */
-  /* About Section */
+  /* OM INSTANTS SEKTION */
   .about {
     display: flex;
     flex-direction: column;
@@ -394,11 +387,11 @@ li {
     transform: translateY(-120px);
     margin-bottom: -120px;
     transform: translate(-200px, -150px);
-    width: 500px; /* Adjust this value to set the precise width */
+    width: 500px;
   }
 
   .about_img .img_zoom {
-    width: 100%; /* Fills the 500px box above */
+    width: 100%;
     height: auto;
     display: block;
   }
@@ -432,6 +425,23 @@ li {
     background-color: #ff3115;
   }
 
+  .about_img {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  .img_zoom {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .about_img:hover .img_zoom {
+    transform: scale(1.15);
+  }
+
   .why {
     text-align: center;
     width: 100vw;
@@ -448,12 +458,32 @@ li {
     margin: 0 auto;
   }
 
+  /* DELTAG*/
+  /** Deltag img animation **/
   .participate_img {
     position: relative;
     z-index: 10;
     margin-right: -100px;
     width: 100%;
     justify-self: end;
+  }
+
+  .participate_img {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 8px;
+
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .img_zoom {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .participate_img:hover {
+    transform: scale(1.15);
   }
 
   .participate {
@@ -506,7 +536,7 @@ li {
     margin-bottom: 0.6rem;
   }
 
-  /* Inspiration Gallery Section */
+  /* INSPIRATION */
   .inspiration {
     text-align: left;
   }
