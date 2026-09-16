@@ -1,0 +1,356 @@
+/********** RESET **********/
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inter-normal {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jost-normal {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+main p {
+  font-family: Jost;
+  margin: 1rem;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #ffffff;
+}
+
+/* ============================================================
+   1. MOBILE BASE STYLES (Default / Hamburger View)
+============================================================ */
+
+.navbar {
+  font-family: Jost;
+  width: 100%;
+  background-color: #3f39d2; /* Main blue/purple background */
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  position: relative;
+}
+
+/* Handwritten Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #ffffff;
+  width: 100px;
+  height: auto;
+}
+
+img[src*="Logo_1.svg"] {
+  filter: invert(1);
+}
+
+.logo-bottom {
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+/* Hidden Checkbox Controller */
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger Icon Styling */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown Menu Overlay (Mobile) */
+.nav-links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #3e3cc9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease-in-out,
+    padding 0.35s ease-in-out;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Red-bordered Buttons */
+.nav-btn {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: 3.5px solid #ff371a;
+  background-color: transparent;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  background-color: #ff371a;
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   TOGGLE ACTIONS (When Hamburger Checkbox is Checked)
+------------------------------------------------------------ */
+
+/* Expand Menu Dropdown */
+.menu-toggle:checked ~ .nav-links {
+  max-height: 220px;
+  padding: 20px 20px 28px;
+}
+
+/* Animate Hamburger Lines into an "X" */
+.menu-toggle:checked ~ .hamburger-btn .hamburger-line:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-toggle:checked ~ .hamburger-btn .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger-btn .hamburger-line:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* ============================================================
+   2. DESKTOP MEDIA QUERY (min-width: 768px)
+============================================================ */
+
+@media (min-width: 768px) {
+  .navbar-container {
+    padding: 0 60px;
+    height: 120px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* Hide Hamburger Controls on Desktop */
+  .hamburger-btn,
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Restore Regular Horizontal Navigation Bar */
+  .nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    max-height: none;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 30px;
+    overflow: visible;
+  }
+
+  .logo {
+    font-size: 42px;
+  }
+
+  .logo-bottom {
+    font-size: 38px;
+    padding-left: 28px;
+  }
+
+  .nav-btn {
+    width: auto;
+    font-size: 18px;
+    padding: 14px 24px;
+    border-width: 4px;
+  }
+}
+
+/**** FOOTER ****/
+
+/* ============================================================
+   1. MOBILE BASE STYLES (Default / Small Screens)
+============================================================ */
+
+.site-footer {
+  font-family: Jost;
+  width: 100%;
+  background-color: #3f39d2; /* Matching rich blue/purple */
+  color: #ffffff;
+  padding: 20px 20px;
+  margin-top: 10rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.footer-logo .logo-bottom {
+  font-size: 34px;
+  padding-left: 22px;
+}
+
+.footer_content {
+  transform: translateY(-120px);
+}
+
+.footer-text {
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #ffffff;
+  max-width: 360px;
+}
+
+.footer-sponsor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer_img {
+  width: 350px;
+  height: auto;
+  margin-top: -180px; /* Moves up */
+  margin-left: -35px; /* Moves left */
+}
+
+/* ============================================================
+   2. DESKTOP MEDIA QUERY (min-width: 768px)
+============================================================ */
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 60px 80px;
+    /* Ensures the overflowing image isn't clipped */
+    overflow: visible;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer_content {
+    order: 1;
+    transform: translateY(-150px);
+
+    /* Turn container into a flex column aligned to the left */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .footer-logo,
+  .footer-text,
+  .footer-sponsor {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .footer-logo {
+    font-size: 46px;
+    margin-top: 100px;
+  }
+
+  .footer-text {
+    font-size: 18px;
+    max-width: 420px;
+  }
+
+  .footer-sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sponsor-logo {
+    width: 200px;
+    height: auto;
+    margin-left: -20px;
+  }
+
+  .footer_img_container {
+    order: 2;
+    align-self: start;
+    transform: translateY(-80px);
+  }
+
+  .footer_img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+  }
+}

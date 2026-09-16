@@ -1,0 +1,566 @@
+h2 {
+  font-size: 1rem;
+  margin: 16px;
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+.index_hero {
+  position: relative;
+  width: 100%;
+  /* Allows the yellow box to overflow past the bottom of the image without getting clipped */
+  overflow: visible;
+  margin-bottom: 5rem; /* Adds space below so content under the hero doesn't overlap the yellow box */
+}
+
+.index_hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Faster cycle time with discrete frame steps for authentic film jitter */
+  animation: subtleFilmJitter 3s infinite steps(1);
+}
+
+@keyframes subtleFilmJitter {
+  0% {
+    filter: brightness(1) contrast(1);
+    transform: translate(0, 0);
+  }
+  20% {
+    /* Slight shift up, very minor brightness boost */
+    filter: brightness(1.03);
+    transform: translate(0.5px, -0.5px);
+  }
+  40% {
+    filter: brightness(0.97);
+    transform: translate(-0.5px, 0.5px);
+  }
+  60% {
+    /* Soft analog warm tint bump without severe color distortion */
+    filter: brightness(1.02) sepia(0.08);
+    transform: translate(-0.5px, -0.5px);
+  }
+  80% {
+    filter: brightness(0.99);
+    transform: translate(0.5px, 0.5px);
+  }
+  100% {
+    filter: brightness(1);
+    transform: translate(0, 0);
+  }
+}
+
+.hero_overlay {
+  position: absolute;
+  top: 15%;
+  left: 0%;
+  background-color: #ffd100;
+  padding: 2.5rem 3rem 2.5rem 0.5rem;
+  width: 80%;
+  max-width: 500px;
+  box-sizing: border-box;
+  z-index: 2;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero_overlay h1 {
+  font-family: Inter;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero_large {
+  display: inline-block;
+  transform: scaleY(1.4) translateY(-15px);
+  transform-origin: top left;
+}
+
+/* Subtitle Date Formatting */
+.hero_date {
+  font-family: Jost;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.hero_btn {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: #ff3318;
+  color: #ffffff;
+  text-decoration: none;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  margin-top: 1rem;
+  border: none;
+}
+
+.about {
+  font-family: Jost;
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.about p {
+  max-width: 35ch;
+}
+
+.about_img {
+  width: 200px;
+  height: auto;
+  margin-left: auto;
+  display: block;
+  transform: translateY(-45px);
+  position: relative;
+  z-index: 2;
+}
+
+.about_btn {
+  border: 3.5px solid #ff371a;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 15px;
+}
+
+.why {
+  font-family: Jost;
+  background-color: #ff3115;
+  padding: 20px;
+  transform: translateY(-60px);
+  color: white;
+
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+img[src*="instant_camera.svg"] {
+  filter: invert(1);
+  width: 100px;
+  height: auto;
+}
+
+img[src*="polaroid.svg"] {
+  filter: invert(1);
+  width: 100px;
+  height: auto;
+}
+
+img[src*="Instant_format.svg"] {
+  filter: invert(1);
+  width: 100px;
+  height: auto;
+}
+
+img[src*="biggest_format.svg"] {
+  filter: invert(1);
+  width: 100px;
+  height: auto;
+}
+
+.infographics_container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.infographic_item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.infographic_item p {
+  font-family: Jost;
+  margin: 0;
+}
+
+.participate_grid {
+  transform: translateY(-120px);
+}
+
+.participate_img {
+  width: 250px;
+  height: auto;
+  margin: 0 auto;
+  transform: translateY(30px);
+}
+
+.participate {
+  font-family: Jost;
+  background-color: #ffd000;
+  padding: 20px;
+  padding-left: 50px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.participate_btn {
+  color: #000000;
+  border: 3.5px solid #ff371a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+
+  display: inline-block;
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+li {
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  max-width: 50ch;
+}
+
+.inspiration_container {
+  margin-top: -100px;
+}
+
+.inspiration {
+  font-family: Jost;
+  display: inline-block;
+  text-align: left;
+  background-color: #ffd000;
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+.inspiration h2 {
+  font-size: 1.5rem;
+}
+
+.inspiration_card {
+  background-color: #ff3115;
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 10px;
+}
+
+.inspiration_card p {
+  color: white;
+}
+
+/****/
+/*** DESKTOP ***/
+@media screen and (min-width: 1200px) {
+  /* ==================== LAYOUT & CONTAINERS ==================== */
+  .grid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: auto;
+    margin: 1rem;
+    align-items: start;
+  }
+
+  .participate_grid {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    align-items: center;
+    max-width: 1200px; /* Caps total width */
+    margin: 0 auto; /* Centers the entire section horizontally */
+    margin-top: 200px;
+    min-height: 100vh;
+  }
+
+  .grid_1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 0.5rem;
+  }
+
+  .infographics_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 50px;
+  }
+
+  .infographic_item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Forces all images to take the available space and align to the bottom */
+  .infographic_item img {
+    height: 120px; /* Set a fixed height for all SVG icons */
+    width: auto; /* Maintains aspect ratio */
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+  .infographic_item p {
+    margin: 0 auto;
+  }
+
+  img[src*="biggest_format.svg"] {
+    filter: invert(1);
+    width: 100px;
+    height: auto;
+    transform: translateY(-10px);
+  }
+
+  .img_container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  /* ==================== SHARED POLAROID BUTTON STYLES ==================== */
+
+  .hero_overlay {
+    width: 80%;
+    max-width: 800px;
+    height: 800px;
+    padding: 1.5rem;
+  }
+
+  .hero_large {
+    transform: scaleY(1.4) translateY(-30px);
+  }
+
+  .hero_overlay h1 {
+    font-size: 10rem;
+  }
+
+  .hero_text {
+    margin-top: -200px;
+  }
+
+  .hero_date {
+    padding-left: 20px;
+  }
+
+  .hero_btn {
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .hero_btn:hover {
+    color: #000000;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 3px #ff371a;
+  }
+
+  /* ==================== CONTENT SECTIONS ==================== */
+  /* About Section */
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 5rem;
+  }
+
+  .about_img {
+    position: relative;
+    z-index: 10;
+    transform: translateY(-120px);
+    margin-bottom: -120px;
+    transform: translate(-200px, -150px);
+    width: 500px; /* Adjust this value to set the precise width */
+  }
+
+  .about_img .img_zoom {
+    width: 100%; /* Fills the 500px box above */
+    height: auto;
+    display: block;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.8rem 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: #000000;
+    margin-left: 1rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #000000;
+    max-width: 440px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about_btn {
+    font-size: 1.5rem;
+  }
+
+  .about_btn:hover {
+    color: white;
+    background-color: #ff3115;
+  }
+
+  .why {
+    text-align: center;
+    width: 100vw;
+  }
+
+  .why h2 {
+    font-size: 1.5rem;
+  }
+
+  .why p {
+    font-size: 1rem;
+    text-align: left;
+    max-width: 65ch;
+    margin: 0 auto;
+  }
+
+  .participate_img {
+    position: relative;
+    z-index: 10;
+    margin-right: -100px;
+    width: 100%;
+    justify-self: end;
+  }
+
+  .participate {
+    background-color: #ffd000;
+    padding: 4rem 3rem 4rem 9rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  .participate_btn {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .participate_btn:hover {
+    color: white;
+    background-color: #ff3115;
+  }
+
+  .participate_img .img_zoom {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .participate h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+  }
+
+  .participate p {
+    font-size: 1rem;
+    margin: 0 0 0.8rem 0;
+  }
+
+  .participate ol {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .participate ol li {
+    margin-bottom: 0.6rem;
+  }
+
+  /* Inspiration Gallery Section */
+  .inspiration {
+    text-align: left;
+  }
+
+  .inspiration_card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    transform-origin: top center;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    animation-name: dynamicPolaroid;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-fill-mode: forwards;
+  }
+
+  .inspiration_card:nth-child(1) img {
+    animation-delay: 0.1s;
+  }
+  .inspiration_card:nth-child(2) img {
+    animation-delay: 0.35s;
+  }
+  .inspiration_card:nth-child(3) img {
+    animation-delay: 0.6s;
+  }
+
+  .inspiration_card img:hover {
+    transform: translateY(-8px) scale(1.02) rotate(1deg) !important;
+    filter: brightness(105%) !important;
+    cursor: pointer;
+  }
+
+  /* Animation Keyframes */
+  @keyframes dynamicPolaroid {
+    0% {
+      transform: translateY(-40px) scale(0.9) rotate(-4deg);
+      filter: brightness(300%) contrast(180%) grayscale(100%);
+      opacity: 0;
+    }
+    30% {
+      filter: brightness(160%) sepia(80%);
+      opacity: 1;
+    }
+    60% {
+      transform: translateY(8px) scale(1.02) rotate(1.5deg);
+      filter: brightness(115%) sepia(30%);
+    }
+    100% {
+      transform: translateY(0) scale(1) rotate(0deg);
+      filter: brightness(100%) contrast(100%) grayscale(0%);
+      opacity: 1;
+    }
+  }
+}
