@@ -38,14 +38,12 @@ body {
   background-color: #ffffff;
 }
 
-/* ============================================================
-   1. MOBILE BASE STYLES (Default / Hamburger View)
-============================================================ */
+/*MOBILE NAV BAR*/
 
 .navbar {
   font-family: Jost;
   width: 100%;
-  background-color: #3f39d2; /* Main blue/purple background */
+  background-color: #3f39d2;
   position: relative;
   z-index: 1000;
 }
@@ -58,7 +56,6 @@ body {
   position: relative;
 }
 
-/* Handwritten Logo */
 .logo {
   display: flex;
   flex-direction: column;
@@ -77,12 +74,10 @@ img[src*="Logo_1.svg"] {
   padding-left: 20px;
 }
 
-/* Hidden Checkbox Controller */
 .menu-toggle {
   display: none;
 }
 
-/* Hamburger Icon Styling */
 .hamburger-btn {
   display: flex;
   flex-direction: column;
@@ -102,7 +97,7 @@ img[src*="Logo_1.svg"] {
   transition: all 0.3s ease-in-out;
 }
 
-/* Dropdown Menu Overlay (Mobile) */
+/* Dropdown Menu */
 .nav-links {
   position: absolute;
   top: 100%;
@@ -122,7 +117,6 @@ img[src*="Logo_1.svg"] {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Red-bordered Buttons */
 .nav-btn {
   color: #ffffff;
   text-decoration: none;
@@ -143,17 +137,13 @@ img[src*="Logo_1.svg"] {
   color: #ffffff;
 }
 
-/* ------------------------------------------------------------
-   TOGGLE ACTIONS (When Hamburger Checkbox is Checked)
------------------------------------------------------------- */
+/* BURGER MENU */
 
-/* Expand Menu Dropdown */
 .menu-toggle:checked ~ .nav-links {
   max-height: 220px;
   padding: 20px 20px 28px;
 }
 
-/* Animate Hamburger Lines into an "X" */
 .menu-toggle:checked ~ .hamburger-btn .hamburger-line:nth-child(1) {
   transform: translateY(9.5px) rotate(45deg);
 }
@@ -166,9 +156,7 @@ img[src*="Logo_1.svg"] {
   transform: translateY(-9.5px) rotate(-45deg);
 }
 
-/* ============================================================
-   2. DESKTOP MEDIA QUERY (min-width: 768px)
-============================================================ */
+/* DESKTOP*/
 
 @media (min-width: 768px) {
   .navbar-container {
@@ -178,13 +166,11 @@ img[src*="Logo_1.svg"] {
     margin: 0 auto;
   }
 
-  /* Hide Hamburger Controls on Desktop */
   .hamburger-btn,
   .menu-toggle {
     display: none;
   }
 
-  /* Restore Regular Horizontal Navigation Bar */
   .nav-links {
     position: static;
     display: flex;
@@ -217,14 +203,10 @@ img[src*="Logo_1.svg"] {
 
 /**** FOOTER ****/
 
-/* ============================================================
-   1. MOBILE BASE STYLES (Default / Small Screens)
-============================================================ */
-
 .site-footer {
   font-family: Jost;
   width: 100%;
-  background-color: #3f39d2; /* Matching rich blue/purple */
+  background-color: #3f39d2;
   color: #ffffff;
   padding: 20px 20px;
   margin-top: 10rem;
@@ -280,18 +262,15 @@ img[src*="Logo_1.svg"] {
 .footer_img {
   width: 350px;
   height: auto;
-  margin-top: -180px; /* Moves up */
-  margin-left: -35px; /* Moves left */
+  margin-top: -180px;
+  margin-left: -35px;
 }
 
-/* ============================================================
-   2. DESKTOP MEDIA QUERY (min-width: 768px)
-============================================================ */
+/* FOOTER DESKTOP */
 
 @media (min-width: 768px) {
   .site-footer {
     padding: 60px 80px;
-    /* Ensures the overflowing image isn't clipped */
     overflow: visible;
   }
 
@@ -305,8 +284,6 @@ img[src*="Logo_1.svg"] {
   .footer_content {
     order: 1;
     transform: translateY(-150px);
-
-    /* Turn container into a flex column aligned to the left */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
