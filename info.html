@@ -1,23 +1,58 @@
 <!doctype html>
 <html lang="da">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="info.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <title>Information</title>
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&family=Tiny5&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-  <body>
-    <!-- HEADER -->
+  <link rel="icon" type="image/png" href="./icons/Logo_1.svg">
+
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/info.css" />
+
+  <title>Information</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <!-- 1. Logo -->
+      <a href="./index.html" class="logo">
+        <img src="./icons/Logo_1.svg" alt="logo">
+      </a>
+
+      <!-- 2. Hidden Checkbox for Toggle State -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+      <!-- 3. Hamburger Icon (Styled via CSS) -->
+      <label for="menu-toggle" class="hamburger-btn" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </label>
+
+      <!-- 4. Navigation Links Panel -->
+      <nav class="nav-links">
+        <a href="./deltag.html" class="nav-btn">Del dine instants</a>
+        <a href="./info.html" class="nav-btn">Information</a>
+      </nav>
+    </div>
+  </header>
+  <main>
     <section class="hero">
       <img src="img_info/info_heder.jpg" alt="header" />
 
@@ -72,10 +107,38 @@
           - Erhvervsakademi København.
         </p>
 
-        <img class="logo" src="img_info/ek.svg" alt="EK logo" />
+        <img class="logo_EK" src="img_info/ek.svg" alt="EK logo" />
       </div>
 
       <img class="info-img" src="img_info/natur_3.jpg" alt="natur" />
     </section>
-  </body>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer_img_container">
+        <img class="footer_img" src="./img/footer_img.png" alt="footer_img">
+      </div>
+
+      <div class="footer_content">
+        <a href="#" class="footer-logo">
+          <img src="./icons/Logo_1.svg" alt="logo">
+        </a>
+
+        <p class="footer-text">
+          Instant Ugen er ikke relateret til nogen virksomheder inden for Instant foto-branchen.
+        </p>
+
+        <div class="footer-sponsor">
+          <p class="footer-text">
+            Den eneste organisation, der støtter os, er EK - Erhvervsakademi København.
+          </p>
+          <div class="sponsor-logo">
+            <img src="./icons/EK_logo_white.png" alt="EK_logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>

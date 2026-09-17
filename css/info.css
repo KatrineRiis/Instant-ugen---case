@@ -71,7 +71,7 @@ body {
   border: 10px solid white;
 }
 
-.logo {
+.logo_EK {
   width: 170px;
   margin-top: 25px;
 }
@@ -87,6 +87,16 @@ body {
 
   .dommer {
     grid-template-columns: 1fr 1.6fr;
+  }
+
+  .hero-text h1 {
+    margin: 0;
+    font-size: 96px;
+  }
+
+  .hero-text p {
+    margin: 0;
+    font-size: 40px;
   }
 
   .yellow-box,
